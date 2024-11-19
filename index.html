@@ -3,22 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Geometry: Polygons and Circle Theorems</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-    <div class="weather-container">
-        <h1>Weather App</h1>
-        <div class="input-group">
-            <input type="text" id="cityInput" placeholder="Enter a city..." />
-            <button id="getWeatherButton">Get Weather</button>
-        </div>
-        <div id="weatherInfo" class="hidden">
-            <h2 id="cityName"></h2>
-            <p id="temperature"></p>
-            <p id="description"></p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+    <!-- Video Lecture Section -->
+    <section id="lecture">
+        <h1>Video Lecture: Geometry - Polygons and Circle Theorems</h1>
+        <iframe width="400" height="315" src="https://www.youtube.com/embed/GppOSNTi5OA?si=sqvzoxwsTrHJjaSs" 
+                title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <h2>Quiz: Geometry - Polygons and Circle Theorems</h2>
+        <form id="quizForm">
+            <div class="quiz-question">
+                <p>1. What is the sum of the interior angles of a hexagon?</p>
+                <input type="radio" name="q1" value="A"> A. 360°<br>
+                <input type="radio" name="q1" value="B"> B. 540°<br>
+                <input type="radio" name="q1" value="C"> C. 720°<br>
+                <span class="feedback" id="feedback1"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. What is the angle subtended by a diameter of a circle?</p>
+                <input type="radio" name="q2" value="A"> A. 90°<br>
+                <input type="radio" name="q2" value="B"> B. 180°<br>
+                <input type="radio" name="q2" value="C"> C. 45°<br>
+                <span class="feedback" id="feedback2"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. How many sides does a polygon have if its interior angle is 120°?</p>
+                <input type="radio" name="q3" value="A"> A. 6 sides<br>
+                <input type="radio" name="q3" value="B"> B. 8 sides<br>
+                <input type="radio" name="q3" value="C"> C. 5 sides<br>
+                <span class="feedback" id="feedback3"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. In a circle, an angle formed by two chords is called a(n):</p>
+                <input type="radio" name="q4" value="A"> A. Central Angle<br>
+                <input type="radio" name="q4" value="B"> B. Inscribed Angle<br>
+                <input type="radio" name="q4" value="C"> C. Tangent Angle<br>
+                <span class="feedback" id="feedback4"></span>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. What is the sum of exterior angles of any polygon?</p>
+                <input type="radio" name="q5" value="A"> A. 360°<br>
+                <input type="radio" name="q5" value="B"> B. 540°<br>
+                <input type="radio" name="q5" value="C"> C. 180°<br>
+                <span class="feedback" id="feedback5"></span>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </section>
+
+    <!-- Assignment Section -->
+    <section id="assignment">
+        <h2>Assignment</h2>
+        <p><strong>Assignment Question:</strong></p>
+        <p>Explain the properties of polygons and the circle theorems. Create a problem set involving these theorems and provide step-by-step solutions.</p>
+        <p>Please submit your assignment by sending an email to: <a href="mailto:geometryassignment2021@gmail.com">geometryassignment2021@gmail.com</a></p>
+        <textarea id="assignmentInput" rows="6" placeholder="Write your assignment here..."></textarea>
+        <button id="submitAssignment" onclick="submitAssignment()">Submit Assignment</button>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation">
+        <h2>PLEASE DONATE</h2>
+        <p>Account Number: 2032202001590</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/GTBank_logo.svg/768px-GTBank_logo.svg.png" alt="GTBank Logo" width="150">
+        <p>Wave Mobile: 3709558</p>
+        <img src="https://s.rfi.fr/media/display/ed44f02a-c239-11ec-b0fc-005056bf8594/w:1280/p:16x9/wave-senegal-mobile-money.png" alt="Wave Mobile Logo" width="150">
+    </section>
+
+    <script src="script.js"></script> <!-- Link to external JS file -->
 </body>
 </html>
