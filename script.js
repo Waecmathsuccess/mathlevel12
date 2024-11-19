@@ -1,41 +1,53 @@
-// Placeholder mock data
-const mockWeatherData = {
-    city: "Sample City",
-    temperature: "25°C",
-    description: "Sunny with clear skies",
-};
+document.getElementById('quizForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-// Select elements
-const cityInput = document.getElementById("cityInput");
-const getWeatherButton = document.getElementById("getWeatherButton");
-const weatherInfo = document.getElementById("weatherInfo");
-const cityName = document.getElementById("cityName");
-const temperature = document.getElementById("temperature");
-const description = document.getElementById("description");
+    let score = 0;
+    const totalQuestions = 5;
 
-// Function to fetch and display weather
-function displayWeather() {
-    const city = cityInput.value.trim();
+    // Clear all previous feedback
+    document.querySelectorAll('.feedback').forEach(feedback => {
+        feedback.textContent = '';
+    });
 
-    if (city === "") {
-        alert("Please enter a city name.");
-        return;
+    // Correct answers for each question
+    const correctAnswers = {
+        q1: 'C',
+        q2: 'A',
+        q3: 'A',
+        q4: 'B',
+        q5: 'A'
+    };
+
+    // Check each question
+    for (let i = 1; i <= totalQuestions; i++) {
+        const questionName = 'q' + i;
+        const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+        const feedbackElement = document.getElementById(`feedback${i}`);
+
+        if (selectedOption) {
+            if (selectedOption.value === correctAnswers[questionName]) {
+                feedbackElement.textContent = '✔ Correct!';
+                feedbackElement.style.color = 'green';
+                score++;
+            } else {
+                feedbackElement.textContent = '✖ Incorrect!';
+                feedbackElement.style.color = 'red';
+            }
+        } else {
+            feedbackElement.textContent = '✖ No answer selected!';
+            feedbackElement.style.color = 'red';
+        }
     }
 
-    // Simulate fetching weather data (use `mockWeatherData` for now)
-    cityName.textContent = city;
-    temperature.textContent = `Temperature: ${mockWeatherData.temperature}`;
-    description.textContent = `Description: ${mockWeatherData.description}`;
-
-    weatherInfo.classList.remove("hidden");
-}
-
-// Add event listener to the button
-getWeatherButton.addEventListener("click", displayWeather);
-
-// Add Enter key support
-cityInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        displayWeather();
-    }
+    alert(`Your score is ${score} out of ${totalQuestions}`);
 });
+
+function submitAssignment() {
+    const assignmentText = document.getElementById('assignmentInput').value;
+    if (assignmentText.trim() === "") {
+        alert("Please write something before submitting!");
+    } else {
+        alert("Your assignment has been submitted. Please send it to the email provided.");
+        document.getElementById('assignmentInput').value = ''; // Clear the textarea
+    }
+}
